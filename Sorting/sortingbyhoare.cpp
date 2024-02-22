@@ -13,7 +13,7 @@ int hoarepartition(int arr[],int l,int h)
         do{
             j--;
     }while(arr[j]>pivot);
-    if(i>=j) j;
+    if(i>=j) return j;
     swap(arr[i],arr[j]);
     }
 }
@@ -21,7 +21,7 @@ int hoarepartition(int arr[],int l,int h)
 void quicksort(int arr[],int l,int h){
     if(l<h){
         int p = hoarepartition(arr,l,h);
-        quicksort(arr,l,p-1);
+        quicksort(arr,l,p);
         quicksort(arr,p+1,h);
     }
 }
